@@ -1,3 +1,5 @@
+install.packages("glmnet")
+library(glmnet)
 library(tidyverse)
 library(sqldf)
 getwd()
@@ -21,8 +23,6 @@ Y
 
 lambdas <- 10^seq(-3,3, length.out=100)
 
-install.packages("glmnet")
-library(glmnet)
 
 lasso.fit= glmnet(X,Y,alpha=1,lambda = lambdas, family = "multinomial")
 
